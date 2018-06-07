@@ -25,6 +25,11 @@ pipeline {
         }
       }
     }
+    stage('package') {
+      steps {
+        archiveArtifacts 'target/*.jar'
+      }
+    }
   }
   post {
     always {
